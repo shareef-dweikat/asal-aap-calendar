@@ -1,37 +1,16 @@
-# Lerna Getting Started Example
-
-This repo is a small example of using Lerna 5+.
-
-Watch this [10-minute walkthrough](https://youtu.be/1oxFYphTS4Y) to see how new versions of Lerna work.
-
-This repo contains three packages or projects:
-
-- `header` (a library of React components)
-- `footer` (a library of React components)
-- `remixapp` (an app written using the Remix framework which depends on both `header` and `footer`)
+Install the package
 
 ```
-packages/
-    header/
-        src/
-            ...
-        package.json
-        rollup.config.json
-        jest.config.js
-
-    footer/
-        src/
-            ...
-        package.json
-        rollup.config.json
-        jest.config.js
-
-    remixapp/
-        app/
-            ...
-        public/
-        package.json
-        remix.config.js
-
-package.json
+npm i ai-chat-cooking-assistant
 ```
+
+Import these 2 files into your page: 
+```
+import 'ai-chat-cooking-assistant/dist/bundle.css'
+import {ChatWidget} from 'ai-chat-cooking-assistant'
+```
+Call the widget in your JSX:
+```
+ <ChatWidget onChange={()=> {}} />
+```
+You are ready to go!
