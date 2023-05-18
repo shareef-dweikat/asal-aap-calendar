@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Choice } from '../../types'
 import { sendMessage } from '../../network/controllers/aiAssistant'
 import { CHAT_TITLE, CHAT_WELCOME_MESSAGE } from '../../constants/strings'
@@ -16,14 +16,24 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
   const [messages, setMessages] = useState<Choice[]>([])
   const [userMessage, setUserMessage] = useState('')
   const [isWriting, setIswriting] = useState(false)
+  const [appInfo, setAppInfo] = useState<{APP_ID: string, APP_KEY: string}>({APP_ID: '', APP_KEY: ''})
+
+  useEffect(() => {
+    const getConfigs = async () => {
+      const configs = await fetch('../../../assistant-configs.json')
+      return configs.json();
+    }
+    getConfigs().then((res) => {
+      setAppInfo(res)
+    })
+  }, [])
 
   const handleSend = async () => {
-    console.log(active, messages, isWriting)
     setUserMessage('')
     setMessages((choices: Choice[]) => [...choices, { message: { content: userMessage, role: 'user' } }])
     setIswriting(true)
 
-    const data = await sendMessage(userMessage)
+    const data = await sendMessage(userMessage, appInfo)
 
     const choices = data.getChoices()
 
@@ -38,6 +48,7 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
       handleSend()
     }
   }
+
   return (
     active ?
       <div id={'container'}>

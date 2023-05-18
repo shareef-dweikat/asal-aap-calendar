@@ -2,12 +2,12 @@ import AIAnswer from '../models/AIAnswer'
 import { TEXT_COMPLETION_ENDPOINT } from '../endpoints'
 import axios from 'axios';
 
-export const sendMessage = async (userMessage: string) => {
-    const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWEyMGYzZWZjYTc2ODYxYjhlMjYzNCIsImlhdCI6MTY4NDEzMDk4MCwiZXhwIjoxNjg2NzIyOTgwfQ.IIYCNmDputBJMjUkDY4F5OphZFC1ZPrqCjCEEUi_1S4'
+export const sendMessage = async (userMessage: string, appInfo: {APP_ID: string, APP_KEY: string}) => {
     const config = {
         headers: {
-            "Authorization": API_KEY,
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "APP_KEY": appInfo.APP_KEY,
+            "APP_ID": appInfo.APP_ID
         }
     };
 
