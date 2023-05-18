@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "https://cooking-assistant.onrender.com",
     "jsx": "react",
     "allowJs": true,
     "esModuleInterop": true,
