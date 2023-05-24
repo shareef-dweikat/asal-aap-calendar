@@ -40,8 +40,7 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
     setIswriting(false)
     setMessages((oldChoices: Choice[]) => [...oldChoices, ...choices])
 
-    const content = choices[0]?.message.content?.slice(1, choices[0]?.message.content.length - 1)
-    onChange(content)
+    onChange(choices[0]?.message.content)
   }
 
   const handleKeyPress = (event: { key: string }) => {
@@ -65,7 +64,7 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
           </div>
           {messages?.map((item: Choice, index: number) => {
             if (item.message.role === "assistant") {
-              return <div id='dialogBox' key={index}>{item.message.content}</div>
+              return <div id='dialogBox' key={index}>{item.message.content.slice(1, item.message.content.length - 1)}</div>
             } else {
               return <div id='leftDialogBoxContainer' key={index}>
                 <div id='dialogBox'>

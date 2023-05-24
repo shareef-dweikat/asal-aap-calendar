@@ -1,6 +1,6 @@
 {
   "name": "ai-chat-cooking-assistant",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && rollup --config",
