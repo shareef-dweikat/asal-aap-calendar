@@ -3,7 +3,7 @@
     bottom: 40px;
     right: 10px;
     height: 500px;
-    width: 250px;
+    width: 260px;
     cursor: pointer;
     background-color: #f4f7f9;
     border-radius: 10px;
@@ -47,6 +47,10 @@
     margin-top: 8px;
     color: white;
     background-color: rgb(0, 132, 255);
+}
+
+#spacer {
+    margin-top: 32px
 }
 
 #messageBox {

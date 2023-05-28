@@ -16,7 +16,7 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
   const [messages, setMessages] = useState<Choice[]>([])
   const [userMessage, setUserMessage] = useState('')
   const [isWriting, setIswriting] = useState(false)
-  const [appInfo, setAppInfo] = useState<{APP_ID: string, APP_KEY: string}>({APP_ID: '', APP_KEY: ''})
+  const [appInfo, setAppInfo] = useState<{ APP_ID: string, APP_KEY: string }>({ APP_ID: '', APP_KEY: '' })
 
   useEffect(() => {
     const getConfigs = async () => {
@@ -73,6 +73,7 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
               </div>
             }
           })}
+          <div id='spacer' />
           {isWriting && <div id='AIIsWriting'>AI assistant is writing.....</div>}
         </div>
         <div id='messageBox'>
