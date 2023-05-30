@@ -1,22 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, LegacyRef } from 'react';
 import { Choice } from '../../types'
 import { sendMessage } from '../../network/controllers/aiAssistant'
 import { CHAT_TITLE, CHAT_WELCOME_MESSAGE } from '../../constants/strings'
 import SendIcon from '@mui/icons-material/Send';
 import MessageIcon from '@mui/icons-material/Message';
 import './ChatWidget.css'
-
+import CloseIcon from '@mui/icons-material/Close';
+import DoneIcon from '@mui/icons-material/Done';
 
 export interface ChatWidgetProps {
   onChange: Function
+  foundProducts: [{ name: string }]
 }
 
-export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
+export const ChatWidget = ({ onChange, foundProducts }: ChatWidgetProps) => {
   const [active, setActive] = useState(false)
   const [messages, setMessages] = useState<Choice[]>([])
   const [userMessage, setUserMessage] = useState('')
   const [isWriting, setIswriting] = useState(false)
   const [appInfo, setAppInfo] = useState<{ APP_ID: string, APP_KEY: string }>({ APP_ID: '', APP_KEY: '' })
+
+  const spacerRef = useRef(null)
+
+  useEffect(() => {
+    spacerRef?.current?.scrollIntoView()
+  }, [messages])
 
   useEffect(() => {
     const getConfigs = async () => {
@@ -29,6 +37,9 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
   }, [])
 
   const handleSend = async () => {
+    const userMessageWithoutSpaces = userMessage?.replace(/\s/g, '')
+    if (userMessageWithoutSpaces?.replace(/\s/g, '') === '') return
+
     setUserMessage('')
     setMessages((choices: Choice[]) => [...choices, { message: { content: userMessage, role: 'user' } }])
     setIswriting(true)
@@ -49,6 +60,21 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
     }
   }
 
+  const isProductFound = (item: string) => {
+    const falg = foundProducts?.filter((product) => product.name.toLocaleLowerCase().trim() === item.toLocaleLowerCase().trim())
+    const isfound = falg.length == 0
+    return isfound
+  }
+
+  const getAssistantMessage = (item, index) => {
+    return <div id='dialogBox' key={index}>
+      {item.message.content?.replace(/['"]+/g, '').split(',').map((item, index) =>
+        <div className={`ingredientTag ${isProductFound(item) ? 'redTag' : 'greenTag'}`}>
+          {isProductFound(item) ? <CloseIcon fontSize="small" /> : <DoneIcon fontSize="small" />} {item}
+        </div>)}
+    </div>
+  }
+
   return (
     active ?
       <div id={'container'}>
@@ -64,7 +90,7 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
           </div>
           {messages?.map((item: Choice, index: number) => {
             if (item.message.role === "assistant") {
-              return <div id='dialogBox' key={index}>{item.message.content.slice(1, item.message.content.length - 1)}</div>
+              return getAssistantMessage(item, index)
             } else {
               return <div id='leftDialogBoxContainer' key={index}>
                 <div id='dialogBox'>
@@ -73,7 +99,7 @@ export const ChatWidget = ({ onChange }: ChatWidgetProps) => {
               </div>
             }
           })}
-          <div id='spacer' />
+          <div ref={spacerRef} id='spacer' />
           {isWriting && <div id='AIIsWriting'>AI assistant is writing.....</div>}
         </div>
         <div id='messageBox'>

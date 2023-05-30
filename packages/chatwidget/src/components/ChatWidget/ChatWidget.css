@@ -47,6 +47,7 @@
     margin-top: 8px;
     color: white;
     background-color: rgb(0, 132, 255);
+    flex-wrap: wrap;
 }
 
 #spacer {
@@ -153,8 +154,34 @@
     bottom: 20px;
 }
 
+.ingredientTag {
+    border: solid;
+    border-width: 1px;
+    margin: 2px;
+    padding: 4px;
+    border-radius: 10px;
+    display: flex;
+    color: black;
+}
+
+.greenTag {
+    background-color: #e8fce8;
+}
+
+.redTag {
+    background-color: #ffcccb;
+}
+
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-  }
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
