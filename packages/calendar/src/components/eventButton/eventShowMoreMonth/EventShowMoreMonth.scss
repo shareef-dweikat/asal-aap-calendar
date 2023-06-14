@@ -1,0 +1,9 @@
+@import '../../../styles/colors';
+
+.Kalend__EventShowMoreMonth__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  white-space: nowrap;
+}

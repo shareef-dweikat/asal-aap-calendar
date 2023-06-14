@@ -1,0 +1,32 @@
+@import '../../../styles/colors';
+
+.Kalend__AgendaDayRow__container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  //height: 100%;
+  border-bottom: solid $GRAY_300 0.4px;
+
+  &-dark {
+    @extend .Kalend__AgendaDayRow__container;
+    border-bottom: solid $GRAY_700 0.4px;
+  }
+}
+
+.Kalend__AgendaDayRow__events {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+
+.Kalend__AgendaDayRow__container-day {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 53px;
+  width: auto;
+}

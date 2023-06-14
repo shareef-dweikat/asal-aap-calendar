@@ -1,0 +1,161 @@
+@import '../../styles/colors';
+
+.Kalend__ButtonIcon__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  position: relative;
+
+  &-small {
+    @extend .Kalend__ButtonIcon__container;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+  }
+
+  &-big {
+    @extend .Kalend__ButtonIcon__container;
+    width: 55px;
+    height: 55px;
+    border-radius: 27.5px;
+  }
+
+  &-full {
+    @extend .Kalend__ButtonIcon__container;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+.Kalend__ButtonIcon {
+  fill: $GRAY_600;
+  background-color: transparent;
+  font-size: 1.4em;
+  border: none;
+  outline-style: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 27.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+
+  &:hover {
+    @extend .Kalend__ButtonIcon;
+    opacity: 0.9;
+    background-color: $GRAY_300;
+  }
+
+  &-dark {
+    @extend .Kalend__ButtonIcon;
+    fill: $GRAY_400;
+
+    &:hover {
+      @extend .Kalend__ButtonIcon-dark;
+      opacity: 0.9;
+      background-color: $GRAY_700;
+    }
+  }
+
+  &-inactive {
+    @extend .Kalend__ButtonIcon;
+
+    &:active {
+      @extend .Kalend__ButtonIcon-inactive;
+      background-color: transparent;
+      animation: none;
+    }
+
+    &:hover {
+      @extend .Kalend__ButtonIcon-inactive;
+      background-color: transparent;
+    }
+  }
+}
+
+.Kalend__ButtonIcon__disabled {
+  cursor: default !important;
+  &:hover {
+    background-color: transparent !important;
+  }
+  &:active {
+    background-color: transparent !important;
+  }
+}
+
+.Kalend__ButtonIcon__svg {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  z-index: 5;
+  fill: $GRAY_600;
+
+  &-normal {
+    @extend .Kalend__ButtonIcon__svg;
+    width: 2.2em;
+    height: 2.2em;
+
+    &-dark {
+      @extend .Kalend__ButtonIcon__svg-normal;
+      fill: $GRAY_300;
+    }
+  }
+
+  &-dark {
+    @extend .Kalend__ButtonIcon__svg;
+    fill: $GRAY_300;
+  }
+}
+
+.Kalend__ButtonIcon__backdrop {
+  position: absolute;
+  background-color: $GRAY_400;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation-name: Kalend__ButtonIcon__animation-backdrop;
+  animation-delay: 0s;
+  animation-duration: 0.4s;
+
+  &:active {
+    @extend .Kalend__ButtonIcon__backdrop;
+    background-color: $GRAY_600;
+    animation-name: Kalend__ButtonIcon__animation-press;
+    animation-duration: 0.1s;
+    animation-delay: 0s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+  }
+}
+
+@keyframes Kalend__ButtonIcon__animation-press {
+  0% {
+    background-color: $GRAY_100;
+    opacity: 0.5;
+  }
+  100% {
+    background-color: $GRAY_300;
+    opacity: 1;
+  }
+}
+
+@keyframes Kalend__ButtonIcon__animation-backdrop {
+  0% {
+    background-color: $GRAY_100;
+    width: 0;
+    height: 0;
+  }
+  100% {
+    background-color: $GRAY_400;
+    width: 100%;
+    height: 100%;
+  }
+}

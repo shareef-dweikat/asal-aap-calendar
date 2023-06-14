@@ -1,0 +1,52 @@
+@import '../../../styles/colors';
+
+.Kalend__CalendarHeaderEvents__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+  //height: auto !important;
+  position: relative;
+  margin-left: 40px;
+  //min-height: 30px;
+  //height: auto;
+}
+
+.Kalend__CalendarHeaderEvents__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Kalend__CalendarHeaderEvents__rows {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 2px;
+  height: auto;
+  position: relative;
+}
+.Kalend__CalendarHeaderEvents__eventRow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  height: 25px;
+}
+
+.Kalend__CalendarHeaderEvents__col-wrapper {
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.Kalend__CalendarHeaderEvents__col {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}

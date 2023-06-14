@@ -1,0 +1,35 @@
+@import '../../styles/colors';
+
+.Kalend__full-screen {
+  height: 100%;
+  width: 100%;
+}
+
+.Kalend__CalendarBody {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  //position: relative;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.Kalend__calendar-animation {
+  animation-name: event-load;
+  animation-duration: 1s;
+}
+@keyframes Kalend__event-load {
+  0% {
+    right: -1500px;
+  }
+  100% {
+    right: 0;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "common": {
+    "noEvents": "Nessun evento"
+  },
+  "buttons": {
+    "today": "Oggi",
+    "agenda": "Agenda",
+    "day": "Giorno",
+    "threeDays": "3 Giorni",
+    "week": "Settimana",
+    "month": "Mese",
+    "showMore": "Altro",
+    "newEvent": "Nuovo Evento"
+  },
+  "months": {
+    "january": "Gennaio",
+    "february": "Febbraio",
+    "march": "Marzo",
+    "april": "Aprile",
+    "may": "Maggio",
+    "june": "Giugno",
+    "july": "Luglio",
+    "august": "Agosto",
+    "september": "Settembre",
+    "october": "Ottobre",
+    "november": "Novembre",
+    "december": "Dicembre"
+  },
+  "weekDays": {
+    "Mon": "Lun",
+    "Tue": "Mar",
+    "Wed": "Mer",
+    "Thu": "Gio",
+    "Fri": "Ven",
+    "Sat": "Sab",
+    "Sun": "Dom"
+  },
+  "weekShort": "S"
+}

@@ -1,0 +1,48 @@
+@import '../../../styles/colors';
+
+$month_view__width: 100% / 7;
+$month_view__height: 100% / 6;
+
+.Kalend__MonthWeekRow__container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  //display: flex;
+  align-self: stretch;
+  padding: 0;
+  margin: 0;
+  //height: $month_view__height;
+  border-bottom: solid 1px $GRAY_300;
+  position: relative;
+
+  &--no-border {
+    @extend .Kalend__MonthWeekRow__container;
+    border-bottom: solid 1px transparent;
+
+    &-dark {
+      @extend .Kalend__MonthWeekRow__container--no-border;
+      border-bottom: solid 1px transparent;
+    }
+  }
+
+  &-dark {
+    @extend .Kalend__MonthWeekRow__container;
+    border-bottom: solid 1px $GRAY_700;
+  }
+}
+
+.Kalend__MonthWeekRow__day {
+  height: 22px;
+}
+
+.Kalend__MonthWeekRow__container-events {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.Kalend__MonthWeekRow__event {
+  max-height: 16px !important;
+  min-height: 16px;
+  margin-top: 1px;
+}

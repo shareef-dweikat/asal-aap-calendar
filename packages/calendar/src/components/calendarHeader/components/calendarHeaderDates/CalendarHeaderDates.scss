@@ -1,0 +1,135 @@
+@import '../../../../styles/colors';
+
+.Kalend__CalendarHeaderDates__col {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.Kalend__CalendarHeaderDates__primary {
+  width: 28px;
+  height: 28px;
+  //background-color: $PRIMARY_LIGHT;
+
+  &:hover {
+    @extend .Kalend__CalendarHeaderDates__primary;
+    opacity: 1;
+  }
+
+  &-dark {
+    @extend .Kalend__CalendarHeaderDates__primary;
+    //background-color: $PRIMARY_DARK;
+    &:hover {
+      @extend .Kalend__CalendarHeaderDates__primary-dark;
+      opacity: 1;
+    }
+  }
+}
+
+.Kalend__CalendarHeaderDates__agenda {
+  &:hover {
+    background: transparent !important;
+    cursor: default !important;
+  }
+}
+
+.Kalend__CalendarHeaderDates__agenda-primary {
+  &:hover {
+    cursor: default !important;
+  }
+}
+
+.Kalend__CalendarHeaderDates__circle {
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  margin: 0;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $GRAY_900;
+
+  &:hover {
+    @extend .Kalend__CalendarHeaderDates__circle;
+    background-color: $GRAY_300;
+  }
+
+  &-dark {
+    @extend .Kalend__CalendarHeaderDates__circle;
+    color: $GRAY_100;
+    &:hover {
+      @extend .Kalend__CalendarHeaderDates__circle-dark;
+      background-color: $GRAY_700;
+    }
+  }
+
+  &-small {
+    @extend .Kalend__CalendarHeaderDates__circle;
+    margin-top: 1px;
+    height: 20px !important;
+    width: 20px !important;
+    border-radius: 10px;
+
+    &:hover {
+      @extend .Kalend__CalendarHeaderDates__circle-small;
+      background-color: $GRAY_300;
+    }
+    &-dark {
+      @extend .Kalend__CalendarHeaderDates__circle-small;
+      &:hover {
+        @extend .Kalend__CalendarHeaderDates__circle-small-dark;
+        background-color: $GRAY_700;
+      }
+    }
+
+
+    //&-today {
+    //  @extend .Kalend__CalendarHeaderDates__circle-small;
+    //  background: $PRIMARY_LIGHT;
+    //
+    //  &-dark {
+    //    @extend .Kalend__CalendarHeaderDates__circle-small-today;
+    //    background: $PRIMARY_DARK;
+    //  }
+    //}
+  }
+
+  //&-today {
+  //  @extend .Kalend__CalendarHeaderDates__circle;
+  //  background: $PRIMARY_LIGHT;
+  //
+  //  &-dark {
+  //    @extend .Kalend__CalendarHeaderDates__circle-today;
+  //    background: $PRIMARY_DARK;
+  //  }
+  //}
+}
+
+
+.Kalend__CalendarHeaderDates__text-size-small {
+  font-size: 1.1em !important;
+  padding: 0.4px;
+}
+
+.Kalend__CalendarHeaderDates__text {
+  margin: 0;
+  padding: 1px;
+  font-size: 1.5em;
+  align-self: center;
+  text-align: center;
+  font-weight: 500;
+  line-height: normal;
+
+  &-today {
+    @extend .Kalend__CalendarHeaderDates__text;
+    color: $textDark !important;
+
+    &-dark {
+      @extend .Kalend__CalendarHeaderDates__text-today;
+      color: $text;
+    }
+  }
+}

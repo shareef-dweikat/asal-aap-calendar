@@ -3,12 +3,13 @@
   "private": true,
   "workspaces": ["./packages"],
   "scripts": {
-    "start": "node index.jsx"
+    "start": "lerna run start --stream"
   },
   "devDependencies": {
     "lerna": "6.0.1"
   },
   "dependencies": {
-    "ai-chat-cooking-assistant": "*"
+    "ai-chat-cooking-assistant": "*",
+    "ts-node": "^7.0.1"
   }
 }

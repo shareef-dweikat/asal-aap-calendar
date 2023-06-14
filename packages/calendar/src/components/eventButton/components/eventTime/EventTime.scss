@@ -1,0 +1,59 @@
+@import '../../../../styles/colors';
+
+.Kalend__Event__time {
+  display: -webkit-box;
+  webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin: 0;
+  padding: 2px 1px 0 4px;
+  opacity: 1;
+  overflow: hidden;
+  //color: #f6f4f4;
+  font-size: 0.7em;
+}
+
+.Kalend__Event__time__type {
+  &-normal {
+    padding: 2px 1px 4px 4px;
+
+    &-dark {
+      @extend .Kalend__Event__time__type-normal;
+      //color: $GRAY_900;
+    }
+  }
+
+  &-header {
+    padding: 1px;
+
+    &-dark {
+      @extend .Kalend__Event__time__type-header;
+      color: $GRAY_900;
+    }
+  }
+
+  &-month {
+    padding: 1px;
+    &-dark {
+      @extend .Kalend__Event__time__type-month;
+      color: $GRAY_900;
+    }
+  }
+
+  &-agenda {
+    padding: 8px;
+    font-size: 0.8em;
+    color: $GRAY_700;
+    flex: none;
+    @media (max-width: 750px) {
+      padding: 0 8px 0 8px;
+      margin-top: 4px;
+    }
+    &-dark {
+      @extend .Kalend__Event__time__type-agenda;
+      color: $GRAY_300 !important;
+    }
+    @media (max-width: 750px) {
+      width: 100%;
+    }
+  }
+}

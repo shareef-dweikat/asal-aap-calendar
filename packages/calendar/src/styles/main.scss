@@ -1,0 +1,118 @@
+@import './colors';
+
+.Kalend__text {
+  padding: 0;
+  margin: 0;
+  //font-size: 10px;
+  font-family: MONOSPACE, SansSerif, sans-serif, serif;
+  font-size: 1em;
+
+  //&-dark {
+  //  @extend .Kalend__text;
+  //  color: $GRAY_100;
+  //}
+}
+
+.Kalend__Calendar__root {
+  display: flex;
+  width: inherit;
+  height: 100%;
+  flex-direction: column;
+  font-size: 10px;
+  overflow-x: hidden;
+  //overflow-y: scroll;
+
+  &-dark {
+    @extend .Kalend__Calendar__root;
+    background-color: $GRAY_900;
+  }
+}
+
+.Kalend__main * {
+  //font-size: 10px;
+  font-family: MONOSPACE, SansSerif, sans-serif, serif;
+}
+
+.Kalend__Calendar__table {
+  display: inherit;
+  overflow: hidden;
+  width: 100%;
+  height: 100% !important;
+  position: relative;
+
+  &-dark {
+    @extend .Kalend__Calendar__table;
+    background-color: $GRAY_900;
+  }
+}
+
+.Kalend__Calendar__header-surface {
+  display: inherit;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  &-dark {
+    @extend .Kalend__Calendar__table-surface;
+    background-color: $GRAY_900;
+  }
+}
+
+.Kalend__Calendar__table-surface {
+  display: inherit;
+  overflow: hidden;
+  width: 100%;
+  height: 100% !important;
+  position: relative;
+  &-dark {
+    @extend .Kalend__Calendar__table-surface;
+    background-color: $GRAY_900;
+  }
+}
+
+.Kalend__button {
+  padding: inherit;
+  margin: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: auto;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  line-height: inherit;
+  text-transform: none;
+  text-indent: inherit;
+  text-shadow: none;
+  display: flex;
+  text-align: inherit;
+  align-items: inherit;
+  box-sizing: inherit;
+  background-color: transparent;
+  border-width: inherit;
+  border-style: inherit;
+  border-color: inherit;
+  border-image: inherit;
+}
+
+.Kalend__text-light {
+  color: $GRAY_100
+}
+
+.Kalend__text-dark {
+  color: $GRAY_900
+}
+
+.Kalend__icon-task {
+  width: 15px;
+  height: 15px;
+  fill: black;
+  margin-left: 4px;
+  margin-right: 2px;
+  min-width: 15px;
+
+  &-dark {
+    @extend .Kalend__icon-task;
+    fill: white;
+  }
+}

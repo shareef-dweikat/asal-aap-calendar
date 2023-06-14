@@ -1,0 +1,183 @@
+@import '../../styles/colors';
+
+.Kalend__ButtonBase {
+  min-height: 20px;
+  font-size: 1.6em;
+  border-radius: 10px;
+  //padding: 12px 16px 12px 16px;
+  font-weight: 400;
+  border: none;
+  outline-style: none;
+  cursor: pointer;
+  color: $GRAY_800;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    //@extend .ButtonBase;
+    background-color: $GRAY_200;
+  }
+
+  &-dark {
+    @extend .Kalend__ButtonBase;
+    color: $GRAY_100;
+
+    &:hover {
+      @extend .Kalend__ButtonBase-dark;
+      background-color: $GRAY_700;
+      color: $GRAY_100
+    }
+  }
+
+
+  &-normal {
+    @extend .Kalend__ButtonBase;
+    border: none;
+    background-color: $GRAY_800;
+    padding: 4px 12px 4px 12px;
+    color: $GRAY_100;
+
+    &:hover {
+      @extend .Kalend__ButtonBase-normal;
+      background-color: $GRAY_600;
+    }
+  }
+
+  &-disabled {
+    @extend .Kalend__ButtonBase;
+    background-color: $GRAY_400;
+    color: $GRAY_700;
+  }
+
+  &-primary {
+    @extend .Kalend__ButtonBase;
+    padding: 4px 12px 4px 12px;
+    background-color: $PRIMARY_LIGHT;
+    color: $GRAY_200;
+
+    &:hover {
+      @extend .Kalend__ButtonBase-primary;
+      background-color: $PRIMARY_LIGHT_OVERLAY;
+    }
+
+    &-dark {
+      @extend .Kalend__ButtonBase-primary;
+      background-color: $PRIMARY_DARK;
+      color: $GRAY_800;
+    }
+  }
+
+  &-transparent {
+    @extend .Kalend__ButtonBase;
+    padding: 4px 12px 4px 12px;
+    color: $GRAY_700;
+    background-color: transparent;
+
+    &:hover {
+      //@extend .ButtonBase-transparent;
+      background-color: $GRAY_200;
+    }
+  }
+}
+
+.Kalend__ButtonBase__animation {
+  position: absolute;
+  transform: scale(0);
+  background-color: rgba(50, 50, 50, 0.3);
+  border-radius: 50%;
+  animation: Kalend__ripple__animation 500ms ease-in;
+
+  @keyframes Kalend__ripple__animation {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}
+
+.Kalend__ButtonBase__loader-circle {
+  width: 12px;
+  height: 12px;
+  background-color: $GRAY_300;
+  border-radius: 6px;
+  margin: 0 6px 0 6px;
+  opacity: 0;
+  animation-iteration-count: infinite;
+  animation-duration: 1.2s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-name: Kalend__ButtonBase__animation-pulse-loader;
+  animation-delay: 0s;
+
+  &-left {
+    @extend .Kalend__ButtonBase__loader-circle;
+    animation-delay: 0s;
+  }
+
+  &-middle {
+    @extend .Kalend__ButtonBase__loader-circle;
+    animation-delay: 0.3s;
+  }
+
+  &-right {
+    @extend .Kalend__ButtonBase__loader-circle;
+    animation-delay: 0.5s;
+  }
+}
+
+@keyframes Kalend__ButtonBase__animation-pulse-loader {
+  0% {
+    opacity: 0;
+    background-color: $GRAY_500;
+  }
+  50% {
+    opacity: 1;
+    background-color: $GRAY_300;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.Kalend__Button-long {
+  width: 100%;
+  padding: 4px 12px 4px 12px;
+  border-radius: 8px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    @extend .Kalend__Button-long;
+  }
+}
+
+.Kalend__ButtonBase-border {
+  @extend .Kalend__ButtonBase;
+  display: flex;
+  padding: 6px 8px 6px 8px;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  width: auto;
+  border: solid 0.4px $GRAY_300;
+  margin-right: 12px;
+  margin-left: 12px;
+
+  &-dark {
+    @extend .Kalend__ButtonBase-border;
+    border: solid 0.4px $GRAY_500;
+    color: $GRAY_200;
+
+    &:hover {
+      border: solid 0.4px $GRAY_600;
+      background-color: $GRAY_600;
+    }
+  }
+}

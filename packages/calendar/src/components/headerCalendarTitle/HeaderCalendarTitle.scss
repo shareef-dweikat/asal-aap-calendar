@@ -1,0 +1,50 @@
+@import '../../styles/colors';
+
+.Kalend__HeaderCalendarTitle__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 24px 0 16px;
+  width: 100%;
+
+  &-mobile {
+    @extend .Kalend__HeaderCalendarTitle__container;
+    width: 100%;
+  }
+}
+
+.Kalend__HeaderCalendarTitle {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  //margin-right: 24px;
+  color: $text;
+  //padding-left: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  //word-break: break-all;
+
+  &-mobile {
+    @extend .Kalend__HeaderCalendarTitle;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    //text-align: center;
+    font-size: 1.6em;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    //word-break: break-all;
+    &-dark {
+      @extend .Kalend__HeaderCalendarTitle-mobile;
+      color: $textDark;
+    }
+  }
+
+  &-dark {
+    @extend .Kalend__HeaderCalendarTitle;
+    color: $textDark;
+  }
+}

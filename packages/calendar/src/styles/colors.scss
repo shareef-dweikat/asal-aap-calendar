@@ -1,0 +1,93 @@
+
+// BASE GRAY
+$GRAY_100: #f5f5f5;
+$GRAY_200: #eeeeee;
+$GRAY_300: #e0e0e0;
+$GRAY_400: #bdbdbd;
+$GRAY_500: #9e9e9e;
+$GRAY_600: #757575;
+$GRAY_700: #616161;
+$GRAY_800: #424242;
+$GRAY_900: #1D1F26;
+$GRAY_TRANSPARENT_300: rgba(234, 234, 234, 0.6);
+
+// LIGHT THEME START
+
+$SURFACE_LIGHT: rgb(255, 255, 255);
+$ICON_GRAY_LIGHT: #757575;
+$PRIMARY_LIGHT: #ec407a;
+$PRIMARY_LIGHT_OVERLAY: rgba(236, 64, 122, 0.7);
+$BORDER_GRAY_LIGHT: rgba(222, 222, 222, 0.4);
+$MODAL_LIGHT: #f5f5f5;
+// LIGHT THEME END
+
+
+// DARK THEME START
+
+$SURFACE_DARK: #121212;
+$ICON_GRAY_DARK: #e0e0e0;
+$PRIMARY_DARK: #f48fb1;
+$PRIMARY_DARK_OVERLAY: rgba(244, 143, 145, 0.8);
+$BORDER_GRAY_DARK: rgba(255, 255, 255, 0.055);
+$MODAL_DARK: #1e1e1e;
+$MODAL_DARK_LIGHTER: #1f1f1f;
+
+
+// DARK THEME END
+
+$navbar: #1b1b1b;
+$primary: #191919;
+$primaryColor: #2667FF;
+$primaryHover: rgba(63, 81, 181, 0.8);
+$primaryLight: #FFFFFF;
+$primaryText: rgba(255,255,255, 0.95);
+$reverseText: rgba(255,255,255, 0.95);
+$header: #FFFFFF;
+$ripple: rgba(0, 0, 0, 0.10);
+$modal: #FFFFFF;
+$modalLight: rgb(14, 12, 12);
+$text: rgba(22, 4, 4, 0.87);
+$gray: rgba(0, 0, 0, 0.60);
+$grayHover: rgba(0, 0, 0, 0.20);
+$grayLight: rgba(0, 0, 0, 0.05);
+$border: rgba(0, 0, 0, 0.1);
+$borderLight: rgba(0, 0, 0, 0.1);
+$snackbar: #1f1f1f;
+$reversePrimary: #9fa8da;
+$switchBase: #f5f5f5;
+$error: #e53935;
+$boxShadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$navbarInactive: rgba(0, 0, 0, 0.50);
+$icon: rgba(0, 0, 0, 0.50);
+$backDrop: rgba(22, 4, 4, 0.20);
+
+$primaryColorDark: #9fa8da;
+$primaryLightDark: rgba(159, 168, 218, 0.20);
+$primaryTextDark: #141414;
+$primarySelectedDark: rgba(159, 168, 218, 0.2);
+$headerDark: #191919;
+$rippleDark: rgba(255,255,255, 0.10);
+$modalDark: #282828;
+$modalLightDark: #383838;
+$textDark: #e5e5e5;
+$reverseTextDark: rgba(0, 0, 0, 0.87);
+$grayDark: rgba(255,255,255, 0.60);
+$grayLightDark: rgba(255,255,255, 0.90);
+$borderLightDark: rgba(255,255,255, 0.05);
+$snackbarDark: rgba(255,255,255, 0.95);
+$reversePRIMARY_DARK: #3f51b5;
+$switchBaseDark: #bdbdbd;
+$errorDark: #ef9a9a;
+$boxShadowDark: transparent;
+$navbarInactiveDark: rgba(255,255,255, 0.60);
+$borderTop: 1px 0 0 0;
+$borderRight: 0 1px 0 0;
+$borderBottom: 0 0 1px 0;
+$borderLeft: 0 0 0 1px;
+$borderTopRightBottom: 1px 1px 1px 0;
+$borderRightBottom: 0 1px 1px 0;
+$borderFull: 1px 1px 1px 1px;
+$borderBottomLight: 0 0 0.6px 0;
+$boxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+$elevation3: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);

@@ -1,0 +1,123 @@
+@import '../../../styles/colors';
+
+$month_view__width: 100% / 7;
+$month_view__height: 100% / 6;
+
+$box_shadow-bottom: inset 0px -1px 1px;
+$box_shadow-bottom-right: inset -1px -1px 0px;
+$box_shadow-right: inset -1px 0px 0px;
+
+.Kalend__MonthOneDay__header-container {
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Kalend__MonthOneDay__events-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.Kalend__MonthOneDay__date-container {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.Kalend__MonthOneDay__circle-color {
+  background: $PRIMARY_LIGHT;
+
+  &-dark {
+    @extend .Kalend__MonthOneDay__circle-color;
+    background: $PRIMARY_DARK;
+  }
+}
+
+.Kalend__MonthOneDay__date {
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+  color: $GRAY_900;
+
+  &-dark {
+    @extend .Kalend__MonthOneDay__date;
+    color: $GRAY_300;
+  }
+
+  &-past {
+    @extend .Kalend__MonthOneDay__date;
+    color: $GRAY_400;
+
+    &-dark {
+      @extend .Kalend__MonthOneDay__date-past;
+      color: $GRAY_600;
+    }
+  }
+
+  &-today {
+    @extend .Kalend__MonthOneDay__date;
+    color: $textDark;
+
+    &-dark {
+      @extend .Kalend__MonthOneDay__date-today;
+      color: $text;
+    }
+  }
+}
+
+.Kalend__MonthOneDay__border {
+  width: $month_view__width;
+  height: $month_view__height;
+  padding: 0;
+  margin: 0;
+
+  &-bottom {
+    @extend .Kalend__MonthOneDay__border;
+    box-shadow: $box_shadow-bottom $borderLight;
+    -moz-box-shadow: $box_shadow-bottom-right $borderLight;
+    -webkit-box-shadow: $box_shadow-bottom-right $borderLight;
+
+    &-dark {
+      @extend .Kalend__MonthOneDay__border;
+      box-shadow: $box_shadow-bottom $borderLightDark;
+      -moz-box-shadow: $box_shadow-bottom-right $borderLightDark;
+      -webkit-box-shadow: $box_shadow-bottom-right $borderLightDark;
+    }
+  }
+
+  &-bottom-right {
+    @extend .Kalend__MonthOneDay__border;
+    box-shadow: $box_shadow-right $borderLight;
+    -moz-box-shadow: $box_shadow-bottom-right $borderLight;
+    -webkit-box-shadow: $box_shadow-bottom-right $borderLight;
+
+    &-dark {
+      @extend .Kalend__MonthOneDay__border-bottom-right;
+      box-shadow: $box_shadow-bottom-right $borderLightDark;
+      -moz-box-shadow: $box_shadow-bottom-right $borderLightDark;
+      -webkit-box-shadow: $box_shadow-bottom-right $borderLightDark;
+    }
+  }
+
+  &-right {
+    @extend .Kalend__MonthOneDay__border;
+    box-shadow: $box_shadow-right $borderLight;
+    -moz-box-shadow: $box_shadow-bottom-right $borderLight;
+    -webkit-box-shadow: $box_shadow-bottom-right $borderLight;
+
+    &-dark {
+      @extend .Kalend__MonthOneDay__border;
+      box-shadow: $box_shadow-right $borderLightDark;
+      -moz-box-shadow: $box_shadow-bottom-right $borderLightDark;
+      -webkit-box-shadow: $box_shadow-bottom-right $borderLightDark;
+    }
+  }
+}

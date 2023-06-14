@@ -1,0 +1,49 @@
+@import '../../styles/colors';
+
+.Kalend__carousel__wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  @media (min-width: 750px) {
+    overflow-x: hidden;
+  }
+}
+
+.Kalend__carousel__control {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.Kalend__carousel__control-left {
+  @extend .Kalend__carousel__control;
+  left: 100px;
+  justify-content: flex-start;
+  animation-name: Kalend__carousel-left;
+  animation-duration: 0.3s;
+}
+.Kalend__carousel__control-right {
+  @extend .Kalend__carousel__control;
+  right: 100px;
+  justify-content: flex-end;
+  animation-name: Kalend__carousel-right;
+  animation-duration: 0.3s;
+}
+@keyframes Kalend__carousel-left {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 100px;
+  }
+}
+@keyframes Kalend__carousel-right {
+  0% {
+    right: -100px;
+  }
+  100% {
+    right: 100px;
+  }
+}

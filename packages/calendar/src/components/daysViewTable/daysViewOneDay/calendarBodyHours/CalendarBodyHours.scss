@@ -1,0 +1,58 @@
+@import '../../../../styles/colors';
+
+.Kalend__CalendarBodyHours__wrapper {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  bottom: 20px;
+  flex-direction: column;
+  height: 100%;
+  width: 40px;
+  pointer-events: none
+}
+
+.Kalend__CalendarBodyHours__container {
+  flex-direction: row;
+  display: flex;
+  //height: 40px !important;
+  //min-height: 40px;
+  width: 100%;
+}
+
+.Kalend__CalendarBodyHours__text {
+  position: absolute;
+  text-align-vertical: top;
+  z-index: 10;
+  color: $GRAY_600;
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+  //margin-left: 8px;
+  //margin-top: -10px;
+  //width: 40px;
+  text-align: center;
+
+  &-dark {
+    @extend .Kalend__CalendarBodyHours__text;
+    color: $GRAY_400;
+  }
+}
+
+.Kalend__CalendarBodyHours__line {
+  position: absolute;
+  left: 40px;
+  width: 100vw !important;
+  height: 1px;
+  //margin-top: 9px;
+  background: $GRAY_300;
+  z-index: 2;
+
+  &-dark {
+    @extend .Kalend__CalendarBodyHours__line;
+    background: $GRAY_700;
+  }
+}

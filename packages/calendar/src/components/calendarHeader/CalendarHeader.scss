@@ -1,0 +1,96 @@
+@import '../../styles/colors';
+
+.Kalend__CalendarHeader {
+  border-radius: 8px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  //height: 100px;
+  height: auto;
+  width: 100%;
+  //background-color: $modal;
+  padding-bottom: 6px;
+  box-shadow: 0 5px 5px -5px #333;
+  z-index: 10;
+  @media (max-width: 750px) {
+    border-radius: 0px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  }
+
+  &-dark {
+    @extend .Kalend__CalendarHeader;
+    background-color: $GRAY_800;
+    box-shadow: none;
+    @media (max-width: 750px) {
+      border-radius: 0 0 8px 8px !important;
+      box-shadow: none;
+    }
+  }
+
+  &-tall {
+    @extend .Kalend__CalendarHeader;
+    height: auto;
+    &-dark {
+      @extend .Kalend__CalendarHeader;
+      background-color: $GRAY_800;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  }
+
+  &-small {
+    @extend .Kalend__CalendarHeader;
+    height: 30px;
+  }
+
+  &-day {
+    @extend .Kalend__CalendarHeader;
+    flex-direction: row;
+  }
+
+  &-tall-day {
+    @extend .Kalend__CalendarHeader;
+  }
+}
+
+.Kalend__header_calendar_days__text {
+  margin: 0;
+  padding: 1px;
+  font-size: 1.2em;
+  align-self: center;
+  text-align: center;
+  color: $GRAY_500;
+}
+
+.Kalend__event_header__container {
+  position: absolute;
+  border-radius: 4px;
+  z-index: 9;
+  height: 40px;
+  text-align: left;
+  padding-left: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  //margin-left: 1px;
+  //margin-right: 1px;
+}
+.Kalend__event_header__text {
+  color: $primaryText;
+  font-size: 1em;
+  margin: 0;
+  //padding-left: 2px;
+  //padding-right: 2px;
+  text-align: left;
+}
+.Kalend__event_header__text--dark {
+  @extend .Kalend__event_header__text;
+  color: $primaryTextDark;
+}

@@ -1,0 +1,22 @@
+@import '../../../styles/colors';
+
+$BORDER_COLOR: $GRAY_300;
+$BORDER_DARK_COLOR: $GRAY_900;
+
+.Kalend__DayViewOneDay {
+  position: relative;
+  flex-direction: column;
+
+  &-dark {
+    @extend .Kalend__DayViewOneDay;
+  }
+}
+
+.Kalend__DayViewOneDay__border-left {
+  border-left: solid 0.6px $BORDER_COLOR;
+
+  &-dark {
+    @extend .Kalend__DayViewOneDay__border-left;
+    border-left: solid 0.6px $BORDER_DARK_COLOR;
+  }
+}

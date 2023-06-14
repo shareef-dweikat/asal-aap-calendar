@@ -1,0 +1,36 @@
+@import '../../../../styles/colors';
+
+.Kalend__CalendarHeaderWeekDays__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+
+.Kalend__CalendarHeaderWeekDays__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Kalend__CalendarHeaderWeekDays__col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.Kalend__CalendarHeaderWeekDays__text {
+  margin: 0;
+  padding: 1px;
+  font-size: 1.2em;
+  align-self: center;
+  text-align: center;
+  color: $GRAY_600;
+
+  &-dark {
+    @extend .Kalend__CalendarHeaderWeekDays__text;
+    color: $GRAY_400;
+  }
+}
