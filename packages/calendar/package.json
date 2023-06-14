@@ -1,6 +1,6 @@
 {
-  "name": "big-cal",
-  "version": "0.0.70",
+  "name": "asal-app-calendar",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "scripts": {
     "compile-scss": "node-sass ./src/ --output ./build/dist/styles/tmp",

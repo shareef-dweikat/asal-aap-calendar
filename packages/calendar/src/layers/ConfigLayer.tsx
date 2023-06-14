@@ -79,7 +79,7 @@ export const createConfig = (props: KalendProps): Config => {
   };
 };
 
-export const createCallbacks = (props: KalendProps): Callbacks => {
+export const createCallbacks = (props: any): Callbacks => {
   return {
     onEventDragFinish: props.onEventDragFinish || undefined,
     onPageChange: props.onPageChange || undefined,

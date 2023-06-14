@@ -54,6 +54,6 @@ export interface KalendProps {
     testMode?: boolean;
     newEventText?: string;
 }
-declare module 'big-cal'
-declare const bigCalendar: (props: KalendProps) => any;
-export default bigCalendar;
+declare module 'asal-app-calendar'
+declare const ASALCalendar: (props: KalendProps) => any;
+export default ASALCalendar;
